@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Baltic Yachts Lunch Service POC</title>
+<title>Lunch Service POC</title>
 
 <style>
 :root{
@@ -22,64 +22,63 @@
 
 body{
     margin:0;
-    font-family:Segoe UI, Arial, sans-serif;
     background:var(--bg);
     color:var(--text);
+    font-family:Segoe UI, Arial, sans-serif;
 }
 
 .hero{
     background:linear-gradient(135deg,var(--brand),#2a7ba8);
     color:white;
-    padding:60px 24px;
     text-align:center;
+    padding:70px 24px;
 }
 
 .hero h1{
     margin:0;
-    font-size:42px;
+    font-size:48px;
 }
 
 .hero p{
     margin-top:12px;
+    font-size:20px;
     opacity:.9;
-    font-size:18px;
 }
 
 .container{
-    max-width:1000px;
+    max-width:1100px;
     margin:auto;
-    padding:32px 24px;
+    padding:40px 24px;
 }
 
 .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:24px;
 }
 
 .card{
-    background:var(--card);
+    background:white;
     border:1px solid var(--line);
-    border-radius:16px;
-    padding:24px;
+    border-radius:18px;
+    padding:28px;
     text-decoration:none;
     color:inherit;
     transition:.15s;
 }
 
 .card:hover{
-    transform:translateY(-2px);
-    box-shadow:0 8px 24px rgba(0,0,0,.08);
+    transform:translateY(-3px);
+    box-shadow:0 10px 24px rgba(0,0,0,.08);
 }
 
 .icon{
-    font-size:40px;
-    margin-bottom:12px;
+    font-size:52px;
+    margin-bottom:16px;
 }
 
 .card h2{
-    margin:0 0 8px 0;
-    font-size:22px;
+    margin:0 0 10px 0;
 }
 
 .card p{
@@ -90,9 +89,20 @@ body{
 
 .footer{
     text-align:center;
+    padding:30px;
     color:var(--muted);
-    padding:32px 24px;
     font-size:14px;
+}
+
+.badge{
+    display:inline-block;
+    margin-top:10px;
+    font-size:12px;
+    font-weight:600;
+    color:white;
+    background:var(--brand);
+    padding:6px 10px;
+    border-radius:999px;
 }
 </style>
 </head>
@@ -108,26 +118,30 @@ body{
 
     <div class="grid">
 
-        <a class="card"   <div class="icon">🍽️</div>
+        <a class          <div class="icon">🍽️</div>
             <h2>User Portal</h2>
             <p>Order lunch, guest lunches and review personal orders.</p>
+            <div class="badge">Employees</div>
         </a>
 
         kiosk/
             <div class="icon">💳</div>
             <h2>Lunch Kiosk</h2>
             <p>Card-based lunch ordering for employees and guest lunches.</p>
+            <div class="badge">Kitchen Area</div>
         </a>
 
-        <a class="card" href="v class="icon">🥐</div>
+        bulla/
+            <div class="icon">🥐</div>
             <h2>Bulla Kiosk</h2>
-            <p>Bulla, candy, drinks and sandwich purchases using employee cards.</p>
+            <p>Bulla, candy, drinks and sandwich purchases.</p>
+            <div class="badge">Coffee Room</div>
         </a>
 
-        admin/
-            <div class="icon">⚙️</div>
+        <a class="card" hrefdiv class="icon">⚙️</div>
             <h2>Administration</h2>
-            <p>Menus, employees, reporting, kitchen summaries and configuration.</p>
+            <p>Menus, reports, kitchen summaries and employee management.</p>
+            <div class="badge">Administrators</div>
         </a>
 
     </div>
@@ -135,7 +149,7 @@ body{
 </div>
 
 <div class="footer">
-    Baltic Yachts • Lunch Ordering POC
+    Baltic Yachts · Lunch Ordering POC
 </div>
 
 </body>
