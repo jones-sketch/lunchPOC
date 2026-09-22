@@ -6,200 +6,30 @@
   <meta name="theme-color" content="#155b87">
   <title>Lunch Service POC</title>
   <style>
-    :root {
-      --brand: #155b87;
-      --brand-dark: #104766;
-      --brand-light: #2a7ba8;
-      --canvas: #f3f6f8;
-      --surface: #ffffff;
-      --line: #dce3e8;
-      --text: #18232c;
-      --muted: #64727d;
-      --shadow: 0 10px 30px rgba(20, 48, 66, 0.10);
-    }
-
-    * { box-sizing: border-box; }
-
-    html { background: var(--canvas); }
-
-    body {
-      min-height: 100vh;
-      margin: 0;
-      color: var(--text);
-      background: var(--canvas);
-      font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .hero {
-      padding: 68px 24px 62px;
-      color: #fff;
-      background: linear-gradient(135deg, var(--brand-dark), var(--brand-light));
-      text-align: center;
-    }
-
-    .hero-mark {
-      width: 62px;
-      height: 62px;
-      display: grid;
-      place-items: center;
-      margin: 0 auto 18px;
-      background: rgba(255, 255, 255, 0.16);
-      border: 1px solid rgba(255, 255, 255, 0.24);
-      border-radius: 18px;
-      font-size: 30px;
-    }
-
-    .hero h1 {
-      margin: 0;
-      font-size: clamp(32px, 5vw, 48px);
-      line-height: 1.1;
-      font-weight: 750;
-      letter-spacing: -0.025em;
-    }
-
-    .hero p {
-      max-width: 680px;
-      margin: 14px auto 0;
-      color: rgba(255, 255, 255, 0.84);
-      font-size: clamp(16px, 2vw, 19px);
-      line-height: 1.5;
-    }
-
-    main {
-      width: min(1100px, calc(100% - 32px));
-      margin: -28px auto 0;
-      position: relative;
-    }
-
-    .intro {
-      margin-bottom: 18px;
-      padding: 20px 22px;
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      box-shadow: var(--shadow);
-    }
-
-    .intro strong,
-    .intro span { display: block; }
-
-    .intro strong { font-size: 17px; }
-
-    .intro span {
-      margin-top: 5px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.45;
-    }
-
-    .portal-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .portal-card {
-      min-height: 210px;
-      display: flex;
-      flex-direction: column;
-      padding: 24px;
-      color: inherit;
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      box-shadow: 0 3px 12px rgba(20, 48, 66, 0.05);
-      text-decoration: none;
-      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
-    }
-
-    .portal-card:hover,
-    .portal-card:focus-visible {
-      transform: translateY(-3px);
-      border-color: #9fc6dc;
-      box-shadow: var(--shadow);
-    }
-
-    .portal-card:focus-visible {
-      outline: 3px solid rgba(21, 91, 135, 0.25);
-      outline-offset: 3px;
-    }
-
-    .card-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 16px;
-    }
-
-    .card-icon {
-      width: 58px;
-      height: 58px;
-      display: grid;
-      place-items: center;
-      flex: 0 0 auto;
-      background: #eaf4fa;
-      border-radius: 15px;
-      font-size: 29px;
-    }
-
-    .card-arrow {
-      color: #8b9aa4;
-      font-size: 30px;
-      line-height: 1;
-      transition: transform 160ms ease;
-    }
-
-    .portal-card:hover .card-arrow { transform: translateX(3px); }
-
-    .portal-card h2 {
-      margin: 19px 0 8px;
-      font-size: 22px;
-      line-height: 1.2;
-    }
-
-    .portal-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    .card-badge {
-      width: max-content;
-      margin-top: auto;
-      padding: 7px 10px;
-      color: var(--brand-dark);
-      background: #eaf4fa;
-      border-radius: 999px;
-      font-size: 11px;
-      font-weight: 750;
-      letter-spacing: 0.02em;
-    }
-
-    .portal-card.admin .card-icon,
-    .portal-card.admin .card-badge {
-      color: #594614;
-      background: #fff3cc;
-    }
-
-    footer {
-      padding: 30px 20px 36px;
-      color: var(--muted);
-      text-align: center;
-      font-size: 12px;
-    }
-
-    @media (max-width: 680px) {
-      .hero { padding: 52px 20px 54px; }
-      main { width: min(100% - 24px, 1100px); margin-top: -20px; }
-      .portal-grid { grid-template-columns: 1fr; }
-      .portal-card { min-height: 190px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      * { transition: none !important; }
-    }
+    :root{--brand:#155b87;--brand-dark:#104766;--brand-light:#2a7ba8;--canvas:#f3f6f8;--surface:#fff;--line:#dce3e8;--text:#18232c;--muted:#64727d;--shadow:0 10px 30px rgba(20,48,66,.10)}
+    *{box-sizing:border-box}
+    html{background:var(--canvas)}
+    body{min-height:100vh;margin:0;color:var(--text);background:var(--canvas);font-family:Inter,"Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    .hero{padding:64px 24px 58px;color:#fff;background:linear-gradient(135deg,var(--brand-dark),var(--brand-light));text-align:center}
+    .hero-mark{width:62px;height:62px;display:grid;place-items:center;margin:0 auto 18px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.24);border-radius:18px;font-size:30px}
+    .hero h1{margin:0;font-size:clamp(32px,5vw,48px);line-height:1.1;letter-spacing:-.025em}
+    .hero p{max-width:680px;margin:14px auto 0;color:rgba(255,255,255,.84);font-size:clamp(16px,2vw,19px);line-height:1.5}
+    main{position:relative;width:min(1100px,calc(100% - 32px));margin:-28px auto 0}
+    .intro{margin-bottom:18px;padding:20px 22px;background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
+    .intro strong,.intro span{display:block}.intro strong{font-size:17px}.intro span{margin-top:5px;color:var(--muted);font-size:13px;line-height:1.45}
+    .portal-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .portal-card{min-height:210px;display:flex;flex-direction:column;padding:24px;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:0 3px 12px rgba(20,48,66,.05);font:inherit;text-align:left;cursor:pointer;transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease}
+    .portal-card:hover,.portal-card:focus-visible{transform:translateY(-3px);border-color:#9fc6dc;box-shadow:var(--shadow)}
+    .portal-card:focus-visible{outline:3px solid rgba(21,91,135,.25);outline-offset:3px}
+    .card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+    .card-icon{width:58px;height:58px;display:grid;place-items:center;background:#eaf4fa;border-radius:15px;font-size:29px}
+    .card-arrow{color:#8b9aa4;font-size:30px;line-height:1;transition:transform .16s ease}.portal-card:hover .card-arrow{transform:translateX(3px)}
+    .portal-card h2{margin:19px 0 8px;font-size:22px;line-height:1.2}.portal-card p{margin:0;color:var(--muted);font-size:14px;line-height:1.5}
+    .card-badge{width:max-content;margin-top:auto;padding:7px 10px;color:var(--brand-dark);background:#eaf4fa;border-radius:999px;font-size:11px;font-weight:750;letter-spacing:.02em}
+    .portal-card.admin .card-icon,.portal-card.admin .card-badge{color:#594614;background:#fff3cc}
+    footer{padding:30px 20px 36px;color:var(--muted);text-align:center;font-size:12px}
+    @media(max-width:680px){.hero{padding:52px 20px 54px}main{width:min(100% - 24px,1100px);margin-top:-20px}.portal-grid{grid-template-columns:1fr}.portal-card{min-height:190px}}
+    @media(prefers-reduced-motion:reduce){*{transition:none!important}}
   </style>
 </head>
 <body>
@@ -215,49 +45,45 @@
       <span>This is a browser-only proof of concept. Data is stored locally in the current browser.</span>
     </section>
 
-    <nav class="portal-grid" aria-label="Lunch service areas">
-      <a class="portal-card" href="user/">
-        <div class="card-top">
-          <span class="card-icon" aria-hidden="true">🍴</span>
-          <span class="card-arrow" aria-hidden="true">›</span>
-        </div>
+    <div class="portal-grid" role="navigation" aria-label="Lunch service areas">
+      <button class="portal-card" type="button" data-target="user/">
+        <span class="card-top"><span class="card-icon" aria-hidden="true">🍴</span><span class="card-arrow" aria-hidden="true">›</span></span>
         <h2>User Portal</h2>
         <p>Order personal and guest lunches, review orders and manage the current employee session.</p>
         <span class="card-badge">Employees</span>
-      </a>
+      </button>
 
-      <a class="portal-card" href="kiosk/">
-        <div class="card-top">
-          <span class="card-icon" aria-hidden="true">💳</span>
-          <span class="card-arrow" aria-hidden="true">›</span>
-        </div>
+      <button class="portal-card" type="button" data-target="kiosk/">
+        <span class="card-top"><span class="card-icon" aria-hidden="true">💳</span><span class="card-arrow" aria-hidden="true">›</span></span>
         <h2>Lunch Kiosk</h2>
         <p>Use an employee card to order personal or guest lunches from a shared kiosk.</p>
         <span class="card-badge">Card reader</span>
-      </a>
+      </button>
 
-      <a class="portal-card" href="bulla/">
-        <div class="card-top">
-          <span class="card-icon" aria-hidden="true">🥐</span>
-          <span class="card-arrow" aria-hidden="true">›</span>
-        </div>
+      <button class="portal-card" type="button" data-target="bulla/">
+        <span class="card-top"><span class="card-icon" aria-hidden="true">🥐</span><span class="card-arrow" aria-hidden="true">›</span></span>
         <h2>Bulla Kiosk</h2>
         <p>Record employee purchases of bulla, sandwiches, candy, drinks and other products.</p>
         <span class="card-badge">Coffee room</span>
-      </a>
+      </button>
 
-      <a class="portal-card admin" href="admin/">
-        <div class="card-top">
-          <span class="card-icon" aria-hidden="true">⚙️</span>
-          <span class="card-arrow" aria-hidden="true">›</span>
-        </div>
+      <button class="portal-card admin" type="button" data-target="admin/">
+        <span class="card-top"><span class="card-icon" aria-hidden="true">⚙️</span><span class="card-arrow" aria-hidden="true">›</span></span>
         <h2>Administration</h2>
         <p>Maintain menus, products and employees, then review kitchen summaries and reports.</p>
         <span class="card-badge">POC administration</span>
-      </a>
-    </nav>
+      </button>
+    </div>
   </main>
 
   <footer>Lunch Ordering POC</footer>
+
+  <script>
+    document.querySelectorAll('[data-target]').forEach(function (card) {
+      card.addEventListener('click', function () {
+        window.location.href = card.dataset.target;
+      });
+    });
+  </script>
 </body>
 </html>
