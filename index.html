@@ -1,156 +1,263 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lunch Service POC</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#155b87">
+  <title>Lunch Service POC</title>
+  <style>
+    :root {
+      --brand: #155b87;
+      --brand-dark: #104766;
+      --brand-light: #2a7ba8;
+      --canvas: #f3f6f8;
+      --surface: #ffffff;
+      --line: #dce3e8;
+      --text: #18232c;
+      --muted: #64727d;
+      --shadow: 0 10px 30px rgba(20, 48, 66, 0.10);
+    }
 
-<style>
-:root{
-    --brand:#155b87;
-    --brand-dark:#104766;
-    --bg:#f3f6f8;
-    --card:#ffffff;
-    --line:#dce3e8;
-    --text:#18232c;
-    --muted:#64727d;
-}
+    * { box-sizing: border-box; }
 
-*{
-    box-sizing:border-box;
-}
+    html { background: var(--canvas); }
 
-body{
-    margin:0;
-    background:var(--bg);
-    color:var(--text);
-    font-family:Segoe UI, Arial, sans-serif;
-}
+    body {
+      min-height: 100vh;
+      margin: 0;
+      color: var(--text);
+      background: var(--canvas);
+      font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
 
-.hero{
-    background:linear-gradient(135deg,var(--brand),#2a7ba8);
-    color:white;
-    text-align:center;
-    padding:70px 24px;
-}
+    .hero {
+      padding: 68px 24px 62px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--brand-dark), var(--brand-light));
+      text-align: center;
+    }
 
-.hero h1{
-    margin:0;
-    font-size:48px;
-}
+    .hero-mark {
+      width: 62px;
+      height: 62px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 18px;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: 18px;
+      font-size: 30px;
+    }
 
-.hero p{
-    margin-top:12px;
-    font-size:20px;
-    opacity:.9;
-}
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(32px, 5vw, 48px);
+      line-height: 1.1;
+      font-weight: 750;
+      letter-spacing: -0.025em;
+    }
 
-.container{
-    max-width:1100px;
-    margin:auto;
-    padding:40px 24px;
-}
+    .hero p {
+      max-width: 680px;
+      margin: 14px auto 0;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: clamp(16px, 2vw, 19px);
+      line-height: 1.5;
+    }
 
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:24px;
-}
+    main {
+      width: min(1100px, calc(100% - 32px));
+      margin: -28px auto 0;
+      position: relative;
+    }
 
-.card{
-    background:white;
-    border:1px solid var(--line);
-    border-radius:18px;
-    padding:28px;
-    text-decoration:none;
-    color:inherit;
-    transition:.15s;
-}
+    .intro {
+      margin-bottom: 18px;
+      padding: 20px 22px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+    }
 
-.card:hover{
-    transform:translateY(-3px);
-    box-shadow:0 10px 24px rgba(0,0,0,.08);
-}
+    .intro strong,
+    .intro span { display: block; }
 
-.icon{
-    font-size:52px;
-    margin-bottom:16px;
-}
+    .intro strong { font-size: 17px; }
 
-.card h2{
-    margin:0 0 10px 0;
-}
+    .intro span {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
 
-.card p{
-    margin:0;
-    color:var(--muted);
-    line-height:1.5;
-}
+    .portal-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
 
-.footer{
-    text-align:center;
-    padding:30px;
-    color:var(--muted);
-    font-size:14px;
-}
+    .portal-card {
+      min-height: 210px;
+      display: flex;
+      flex-direction: column;
+      padding: 24px;
+      color: inherit;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 3px 12px rgba(20, 48, 66, 0.05);
+      text-decoration: none;
+      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+    }
 
-.badge{
-    display:inline-block;
-    margin-top:10px;
-    font-size:12px;
-    font-weight:600;
-    color:white;
-    background:var(--brand);
-    padding:6px 10px;
-    border-radius:999px;
-}
-</style>
+    .portal-card:hover,
+    .portal-card:focus-visible {
+      transform: translateY(-3px);
+      border-color: #9fc6dc;
+      box-shadow: var(--shadow);
+    }
+
+    .portal-card:focus-visible {
+      outline: 3px solid rgba(21, 91, 135, 0.25);
+      outline-offset: 3px;
+    }
+
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .card-icon {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      background: #eaf4fa;
+      border-radius: 15px;
+      font-size: 29px;
+    }
+
+    .card-arrow {
+      color: #8b9aa4;
+      font-size: 30px;
+      line-height: 1;
+      transition: transform 160ms ease;
+    }
+
+    .portal-card:hover .card-arrow { transform: translateX(3px); }
+
+    .portal-card h2 {
+      margin: 19px 0 8px;
+      font-size: 22px;
+      line-height: 1.2;
+    }
+
+    .portal-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .card-badge {
+      width: max-content;
+      margin-top: auto;
+      padding: 7px 10px;
+      color: var(--brand-dark);
+      background: #eaf4fa;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 750;
+      letter-spacing: 0.02em;
+    }
+
+    .portal-card.admin .card-icon,
+    .portal-card.admin .card-badge {
+      color: #594614;
+      background: #fff3cc;
+    }
+
+    footer {
+      padding: 30px 20px 36px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 12px;
+    }
+
+    @media (max-width: 680px) {
+      .hero { padding: 52px 20px 54px; }
+      main { width: min(100% - 24px, 1100px); margin-top: -20px; }
+      .portal-grid { grid-template-columns: 1fr; }
+      .portal-card { min-height: 190px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
 </head>
-
 <body>
-
-<section class="hero">
+  <header class="hero">
+    <div class="hero-mark" aria-hidden="true">🍽️</div>
     <h1>Lunch Service POC</h1>
-    <p>Lunch ordering, kiosk ordering, administration and Bulla kiosk</p>
-</section>
+    <p>Lunch ordering, card kiosks, kitchen reporting and administration in one proof of concept.</p>
+  </header>
 
-<div class="container">
+  <main>
+    <section class="intro">
+      <strong>Select an area</strong>
+      <span>This is a browser-only proof of concept. Data is stored locally in the current browser.</span>
+    </section>
 
-    <div class="grid">
+    <nav class="portal-grid" aria-label="Lunch service areas">
+      <a class="portal-card" href="user/">
+        <div class="card-top">
+          <span class="card-icon" aria-hidden="true">🍴</span>
+          <span class="card-arrow" aria-hidden="true">›</span>
+        </div>
+        <h2>User Portal</h2>
+        <p>Order personal and guest lunches, review orders and manage the current employee session.</p>
+        <span class="card-badge">Employees</span>
+      </a>
 
-        <a class          <div class="icon">🍽️</div>
-            <h2>User Portal</h2>
-            <p>Order lunch, guest lunches and review personal orders.</p>
-            <div class="badge">Employees</div>
-        </a>
+      <a class="portal-card" href="kiosk/">
+        <div class="card-top">
+          <span class="card-icon" aria-hidden="true">💳</span>
+          <span class="card-arrow" aria-hidden="true">›</span>
+        </div>
+        <h2>Lunch Kiosk</h2>
+        <p>Use an employee card to order personal or guest lunches from a shared kiosk.</p>
+        <span class="card-badge">Card reader</span>
+      </a>
 
-        kiosk/
-            <div class="icon">💳</div>
-            <h2>Lunch Kiosk</h2>
-            <p>Card-based lunch ordering for employees and guest lunches.</p>
-            <div class="badge">Kitchen Area</div>
-        </a>
+      <a class="portal-card" href="bulla/">
+        <div class="card-top">
+          <span class="card-icon" aria-hidden="true">🥐</span>
+          <span class="card-arrow" aria-hidden="true">›</span>
+        </div>
+        <h2>Bulla Kiosk</h2>
+        <p>Record employee purchases of bulla, sandwiches, candy, drinks and other products.</p>
+        <span class="card-badge">Coffee room</span>
+      </a>
 
-        bulla/
-            <div class="icon">🥐</div>
-            <h2>Bulla Kiosk</h2>
-            <p>Bulla, candy, drinks and sandwich purchases.</p>
-            <div class="badge">Coffee Room</div>
-        </a>
+      <a class="portal-card admin" href="admin/">
+        <div class="card-top">
+          <span class="card-icon" aria-hidden="true">⚙️</span>
+          <span class="card-arrow" aria-hidden="true">›</span>
+        </div>
+        <h2>Administration</h2>
+        <p>Maintain menus, products and employees, then review kitchen summaries and reports.</p>
+        <span class="card-badge">POC administration</span>
+      </a>
+    </nav>
+  </main>
 
-        <a class="card" hrefdiv class="icon">⚙️</div>
-            <h2>Administration</h2>
-            <p>Menus, reports, kitchen summaries and employee management.</p>
-            <div class="badge">Administrators</div>
-        </a>
-
-    </div>
-
-</div>
-
-<div class="footer">
-    Baltic Yachts · Lunch Ordering POC
-</div>
-
+  <footer>Lunch Ordering POC</footer>
 </body>
 </html>
