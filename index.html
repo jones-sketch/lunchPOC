@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Baltic Yachts Lunch Service POC</title>
+
+<style>
+:root{
+    --brand:#155b87;
+    --brand-dark:#104766;
+    --bg:#f3f6f8;
+    --card:#ffffff;
+    --line:#dce3e8;
+    --text:#18232c;
+    --muted:#64727d;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Segoe UI, Arial, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+}
+
+.hero{
+    background:linear-gradient(135deg,var(--brand),#2a7ba8);
+    color:white;
+    padding:60px 24px;
+    text-align:center;
+}
+
+.hero h1{
+    margin:0;
+    font-size:42px;
+}
+
+.hero p{
+    margin-top:12px;
+    opacity:.9;
+    font-size:18px;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:32px 24px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:24px;
+    text-decoration:none;
+    color:inherit;
+    transition:.15s;
+}
+
+.card:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 24px rgba(0,0,0,.08);
+}
+
+.icon{
+    font-size:40px;
+    margin-bottom:12px;
+}
+
+.card h2{
+    margin:0 0 8px 0;
+    font-size:22px;
+}
+
+.card p{
+    margin:0;
+    color:var(--muted);
+    line-height:1.5;
+}
+
+.footer{
+    text-align:center;
+    color:var(--muted);
+    padding:32px 24px;
+    font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+    <h1>Lunch Service POC</h1>
+    <p>Lunch ordering, kiosk ordering, administration and Bulla kiosk</p>
+</section>
+
+<div class="container">
+
+    <div class="grid">
+
+        <a class="card"   <div class="icon">🍽️</div>
+            <h2>User Portal</h2>
+            <p>Order lunch, guest lunches and review personal orders.</p>
+        </a>
+
+        kiosk/
+            <div class="icon">💳</div>
+            <h2>Lunch Kiosk</h2>
+            <p>Card-based lunch ordering for employees and guest lunches.</p>
+        </a>
+
+        <a class="card" href="v class="icon">🥐</div>
+            <h2>Bulla Kiosk</h2>
+            <p>Bulla, candy, drinks and sandwich purchases using employee cards.</p>
+        </a>
+
+        admin/
+            <div class="icon">⚙️</div>
+            <h2>Administration</h2>
+            <p>Menus, employees, reporting, kitchen summaries and configuration.</p>
+        </a>
+
+    </div>
+
+</div>
+
+<div class="footer">
+    Baltic Yachts • Lunch Ordering POC
+</div>
+
+</body>
+</html>
