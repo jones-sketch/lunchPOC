@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#155b87">
+  <title>Guest lunch ordering POC</title>
+  <link rel="stylesheet" href="lunch.css">
+  <script src="lunch.js" defer></script>
+</head>
+<body data-order-type="guest">
+  <div class="app-shell">
+    <header class="app-header">
+      <a class="back-button" href="index.html" aria-label="Back to own lunch order">‹</a>
+      <div class="header-title"><h1>Guest lunch</h1><span>Week 39</span></div>
+      <button class="header-user-button" id="logoutButton" type="button" title="Log out"><span id="currentUserName"></span></button><select id="languageSelect" class="language-select" aria-label="Language"><option value="en">EN</option><option value="sv">SV</option><option value="fi">FI</option></select><button class="save-link" id="headerSave" type="button" disabled>Saved</button>
+    </header>
+
+    <main>
+      <section class="guest-banner"><div class="guest-icon">G</div><div><strong>Guest lunch order</strong><span>For guests, subcontractors and interns</span></div></section>
+
+      <section class="task-panel" id="taskPanel">
+        <label for="workTask">Work task / project <span aria-hidden="true">*</span></label>
+        <input id="workTask" name="workTask" type="text" maxlength="120" required autocomplete="off" placeholder="Example: Project 1234, supplier visit">
+        <small id="taskHelp">Required for guest lunch orders.</small>
+      </section>
+
+      <section class="poc-simulation"><label><input id="simulateFriday" type="checkbox"><span id="simulateFridayLabel">POC: Simulate Friday</span></label></section>
+      <section class="notice compact" aria-label="Order deadline"><div class="notice-icon">⏱</div><div><strong>Daily deadline 08:30</strong><span>Orders can be changed until the deadline.</span></div></section>
+      <section class="week" id="week" aria-label="Guest lunch menu"></section>
+    </main>
+
+    <div class="save-bar"><div><strong id="selectionSummary">No guest lunches selected</strong><span id="changeSummary">Nothing to save</span></div><button id="saveButton" type="button" disabled>Save guest order</button></div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </div>
+</body>
+</html>

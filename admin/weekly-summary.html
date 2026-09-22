@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#155b87">
+  <title>Weekly lunch summary</title>
+  <link rel="stylesheet" href="lunch.css">
+  <script src="order-data.js" defer></script><script src="weekly-summary.js" defer></script>
+</head>
+<body>
+  <div class="app-shell admin-shell weekly-summary-page">
+    <header class="app-header">
+      <a class="back-button" href="index.html" aria-label="Back to administration">‹</a>
+      <div class="header-title"><h1>Weekly summary</h1><span>Employee and guest lunch counts</span></div>
+      <button class="save-link" id="printWeekly" type="button">Print</button>
+    </header>
+    <main>
+      <section class="weekly-toolbar">
+        <div class="setting-field">
+          <label for="weekSelect">Week</label>
+          <select id="weekSelect"></select>
+        </div>
+        <label class="demo-switch"><input id="weeklyDemoData" type="checkbox" checked><span>Include demo data</span></label>
+      </section>
+
+      <section class="summary-cards weekly-cards" aria-label="Weekly totals">
+        <article><span>Employee lunches</span><strong id="weeklyEmployeeTotal">0</strong></article>
+        <article><span>Employees</span><strong id="weeklyEmployeeCount">0</strong></article>
+        <article><span>Guest lunches</span><strong id="weeklyGuestTotal">0</strong></article>
+        <article><span>Guest comments</span><strong id="weeklyGuestCount">0</strong></article>
+      </section>
+
+      <section class="weekly-panel">
+        <div class="panel-heading weekly-heading">
+          <div><h2>Employee lunches</h2><p>One row per employee. Meal choices are deliberately not shown.</p></div>
+          <button class="secondary-button export-button" id="exportEmployees" type="button">Export employee CSV</button>
+        </div>
+        <div class="summary-table-wrap">
+          <table class="summary-table">
+            <thead><tr><th>Employee</th><th class="number-column">Lunches</th></tr></thead>
+            <tbody id="employeeRows"></tbody>
+            <tfoot><tr><th>Total</th><th class="number-column" id="employeeFooter">0</th></tr></tfoot>
+          </table>
+        </div>
+      </section>
+
+      <section class="weekly-panel">
+        <div class="panel-heading weekly-heading">
+          <div><h2>Guest lunches</h2><p>Comments remain separate exactly as entered. No spelling or project matching is applied.</p></div>
+          <button class="secondary-button export-button" id="exportGuests" type="button">Export guest CSV</button>
+        </div>
+        <div class="summary-table-wrap">
+          <table class="summary-table">
+            <thead><tr><th>Work task / project comment</th><th class="number-column">Lunches</th></tr></thead>
+            <tbody id="guestRows"></tbody>
+            <tfoot><tr><th>Total</th><th class="number-column" id="guestFooter">0</th></tr></tfoot>
+          </table>
+        </div>
+      </section>
+
+      <p class="poc-note">POC note: demo data represents multiple users. Orders saved in this browser are added as Jonas Westerlund and their guest comment. A production system would read all users from the backend.</p>
+    </main>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </div>
+</body>
+</html>

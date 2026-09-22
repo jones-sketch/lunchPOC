@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#155b87">
+  <title>My orders</title>
+  <link rel="stylesheet" href="lunch.css">
+  <script src="my-orders.js" defer></script>
+</head>
+<body>
+  <div class="app-shell my-orders-page">
+    <header class="app-header">
+      <a class="back-button" href="index.html" id="backButton" aria-label="Back">‹</a>
+      <div class="header-title"><h1 id="pageTitle">My orders</h1><span id="pageSubtitle">This week</span></div>
+      <button class="header-user-button" id="logoutButton" type="button" title="Log out"><span id="currentUserName"></span></button><select id="languageSelect" class="language-select" aria-label="Language"><option value="en">EN</option><option value="sv">SV</option><option value="fi">FI</option></select>
+    </header>
+    <main>
+      <section class="my-orders-intro">
+        <span class="eyebrow" id="introEyebrow">Lunch overview</span>
+        <h2 id="weekHeading">This week</h2>
+        <p id="introText">Check your personal and guest lunch orders for each weekday.</p>
+      </section>
+      <section class="my-orders-list" id="ordersList" aria-live="polite"></section>
+      <section class="my-orders-summary" aria-label="Order summary">
+        <h2 id="summaryHeading">Summary</h2>
+        <div class="summary-cards my-orders-cards">
+          <article><span id="personalLabel">Personal lunches this week</span><strong id="personalTotal">0</strong></article>
+          <article><span id="guestLabel">Guest lunches this week</span><strong id="guestTotal">0</strong></article>
+          <article><span id="monthLabel">Total lunches this month</span><strong id="monthTotal">0</strong></article>
+        </div>
+      </section>
+      <p class="poc-note" id="sourceNote"></p>
+    </main>
+  </div>
+</body>
+</html>
