@@ -1,2 +1,33 @@
 :root{--b:#155b87;--bs:#eaf4fa;--g:#1e7a4f;--gs:#dcf2e5;--r:#c64040;--rs:#fde8e8;--ink:#18232c;--m:#64727d;--line:#dce3e8;--bg:#f3f6f8}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,"Segoe UI",Arial,sans-serif}button,input{font:inherit}.login-shell{min-height:100vh;display:grid;place-content:center;padding:24px}.login-card{width:min(460px,calc(100vw - 32px));padding:34px;text-align:center;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 8px 24px #1430421a}.login-mark,.mark{display:grid;place-items:center;color:#fff;background:var(--b);font-weight:800}.login-mark{width:68px;height:68px;margin:auto;border-radius:18px;font-size:28px}.login-card h1{margin-bottom:6px}.login-card p{color:var(--m)}.login-card label{display:block;text-align:left;font-size:12px;font-weight:700}.login-card input{display:block;width:100%;height:56px;margin-top:7px;border:2px solid #aebac2;border-radius:11px;text-align:center;font-size:22px}.login-card form button{width:100%;height:50px;margin-top:12px;border:0;border-radius:10px;color:#fff;background:var(--b);font-weight:800}.login-message{min-height:24px;margin-top:12px;font-weight:700}.error{color:var(--r)}.success{color:var(--g)}.demo-cards{display:flex;justify-content:center;gap:7px;margin-top:15px}.app-shell{padding-bottom:95px}.app-shell header{position:sticky;top:0;z-index:5;height:76px;display:grid;grid-template-columns:46px 1fr auto auto;align-items:center;gap:10px;padding:0 max(18px,calc((100vw - 1000px)/2));color:#fff;background:var(--b)}.mark{width:38px;height:38px;border-radius:9px}.app-shell header h1{margin:0;font-size:20px}.app-shell header div span{font-size:12px;opacity:.75}.app-shell header button{border:0;color:#fff;background:transparent}.timeout-counter{padding:7px;background:#ffffff24;border-radius:8px;font-weight:800}.warning{color:#422f00;background:#ffd76a}.urgent{color:#fff;background:var(--r)}main{max-width:1000px;margin:auto;padding:18px}.intro{display:flex;align-items:center;justify-content:space-between;padding:20px;color:#fff;background:linear-gradient(135deg,var(--b),#277aa8);border-radius:14px}.eyebrow{font-size:11px;text-transform:uppercase}.intro h2{margin:5px 0}.intro p{margin:0;opacity:.8}.intro>strong{font-size:28px}.product-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:14px}.product-card{display:grid;grid-template-columns:115px 1fr auto;align-items:center;gap:14px;padding:14px;background:#fff;border:2px solid transparent;border-radius:14px}.product-card.selected{border-color:#86b8d4}.product-image{width:115px;height:105px;display:grid;place-items:center;overflow:hidden;background:#eef3f6;border-radius:10px;font-size:52px}.product-image img{width:100%;height:100%;object-fit:cover}.product-info h3{margin:0 0 8px}.product-info strong{color:#104766;font-size:20px}.stepper{display:grid;grid-template-columns:40px 32px 40px;align-items:center}.stepper button{height:40px;border:0;border-radius:9px;font-size:22px}.minus{color:var(--r);background:var(--rs)}.plus{color:var(--g);background:var(--gs)}.stepper output{text-align:center}.empty-state{padding:30px;text-align:center}footer{position:fixed;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:space-between;padding:12px max(18px,calc((100vw - 1000px)/2));background:#fff;border-top:1px solid var(--line)}footer strong,footer span{display:block}footer span{color:var(--m);font-size:12px}footer button{height:48px;padding:0 20px;border:0;border-radius:10px;color:#fff;background:var(--b);font-weight:700}footer button:disabled{background:#dce1e5}.toast{position:fixed;left:50%;bottom:100px;padding:12px;color:#fff;background:#23333d;border-radius:10px;opacity:0;transform:translateX(-50%)}.toast.show{opacity:1}@media(max-width:650px){.product-grid{grid-template-columns:1fr}.product-card{grid-template-columns:85px 1fr}.product-image{width:85px;height:85px}.stepper{grid-column:1/3;justify-self:end}.intro{align-items:flex-start;flex-direction:column}.app-shell header{grid-template-columns:42px 1fr auto}.app-shell header button{display:none}}
 .language-select{width:58px;height:36px;padding:0 6px;color:#fff;background:#2e739d;border:1px solid #ffffff59;border-radius:8px;font-weight:700}.language-select option{color:#18232c;background:#fff}.app-shell header{grid-template-columns:46px 1fr auto auto auto}@media(max-width:650px){.app-shell header{grid-template-columns:42px 1fr auto auto}.app-shell header>button{display:none}}
+/* Add this block to the end of /bulla/bulla.css */
+.demo-cards.demo-cards-stacked {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 40px;
+  padding-top: 18px;
+  border-top: 1px solid #dce3e8;
+}
+.demo-cards.demo-cards-stacked > span {
+  color: #64727d;
+  font-size: 12px;
+}
+.demo-card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
+.demo-card-grid button {
+  min-width: 62px;
+  min-height: 36px;
+  padding: 6px 10px;
+  border: 1px solid #dce3e8;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+}
+

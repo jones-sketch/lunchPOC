@@ -1,0 +1,30 @@
+/* Add this block to the end of /bulla/bulla.css */
+.demo-cards.demo-cards-stacked {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 40px;
+  padding-top: 18px;
+  border-top: 1px solid #dce3e8;
+}
+.demo-cards.demo-cards-stacked > span {
+  color: #64727d;
+  font-size: 12px;
+}
+.demo-card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
+.demo-card-grid button {
+  min-width: 62px;
+  min-height: 36px;
+  padding: 6px 10px;
+  border: 1px solid #dce3e8;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+}
