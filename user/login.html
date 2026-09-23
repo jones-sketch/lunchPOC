@@ -1,31 +1,36 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#155b87">
-  <title>Lunch service login</title>
-  <link rel="stylesheet" href="lunch.css">
-  <script src="login.js" defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#155b87">
+<title>Lunch service login</title>
+<link rel="stylesheet" href="lunch.css">
+<script src="login.js" defer></script>
 </head>
-<body class="user-login-page">
-  <main class="user-login-shell">
-    <section class="user-login-card">
-      <div class="user-login-mark" aria-hidden="true">ID</div>
-      <h1 id="loginTitle">Lunch service</h1>
-      <p id="loginIntro">Enter your employee number to continue.</p>
-      <form id="loginForm">
-        <label id="employeeNumberLabel" for="employeeNumber">Employee number</label>
-        <input id="employeeNumber" inputmode="numeric" autocomplete="username" autofocus required>
-        <button id="loginButton" type="submit">Continue</button>
-      </form>
-      <div id="loginMessage" class="login-message" role="status" aria-live="polite"></div>
-      <div class="user-login-language">
-        <label for="loginLanguage">Language</label>
-        <select id="loginLanguage"><option value="en">English</option><option value="sv">Svenska</option><option value="fi">Suomi</option></select>
-      </div>
-      <p class="poc-login-note" id="pocNote">POC: the login is remembered on this device until you log out or clear browser data.</p>
-    </section>
-  </main>
+<body class="card-login-shell">
+<main class="card-login-card user-login-card">
+<div class="card-symbol">🍽️</div>
+<h1 id="loginTitle">Lunch service</h1>
+<p id="loginIntro">Enter your employee number to continue.</p>
+<form id="loginForm">
+<label id="employeeNumberLabel" for="employeeNumber">Employee number</label>
+<input id="employeeNumber" inputmode="numeric" autocomplete="username" autofocus required>
+<small id="employeePreview"></small>
+<button id="loginButton" type="submit">Continue</button>
+</form>
+<div id="loginMessage" class="login-message"></div>
+<div class="kiosk-demo">
+<span>Test users</span>
+<div id="demoUsers"></div>
+</div>
+<div class="user-login-language">
+<select id="loginLanguage">
+<option value="en">English</option>
+<option value="sv">Svenska</option>
+<option value="fi">Suomi</option>
+</select>
+</div>
+</main>
 </body>
 </html>
